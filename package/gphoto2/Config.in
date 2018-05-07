@@ -1,0 +1,8 @@
+config BR2_PACKAGE_GPHOTO2
+  bool "gphoto2"
+  select BR2_PACKAGE_LIBGPHOTO2A
+  select BR2_PACKAGE_POPT
+  help
+    gphoto2 can steer and connect to DSLR cameras via USB
+
+    http://gphoto.sourceforge.net/

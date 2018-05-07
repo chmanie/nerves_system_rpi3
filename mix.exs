@@ -1,7 +1,7 @@
 defmodule NervesSystemRpi3.MixProject do
   use Mix.Project
 
-  @app :nerves_system_rpi3
+  @app :nerves_system_rpi3_with_gphoto
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -57,16 +57,16 @@ defmodule NervesSystemRpi3.MixProject do
 
   defp description do
     """
-    Nerves System - Raspberry Pi 3 B / B+
+    Nerves System - Raspberry Pi 3 B / B+ including gphoto2
     """
   end
 
   defp package do
     [
-      maintainers: ["Frank Hunleth", "Justin Schneck"],
+      maintainers: ["Christian Maniewski"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/chmanie/#{@app}"}
     ]
   end
 
@@ -84,7 +84,10 @@ defmodule NervesSystemRpi3.MixProject do
       "post-build.sh",
       "cmdline.txt",
       "linux-4.9.defconfig",
-      "config.txt"
+      "config.txt",
+      "Config.in",
+      "external.mk",
+      "package"
     ]
   end
 
